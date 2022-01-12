@@ -1,5 +1,5 @@
-export default function Home() {
-  const message = 'Hello World!';
+import type { ReactElement } from 'react';
 
-  return <h1>{ message }</h1>
+export default function Home(): ReactElement {
+  return <h1>Hello World!</h1>;
 }
