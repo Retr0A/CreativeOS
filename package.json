@@ -9,7 +9,8 @@
     "eslint": "eslint .",
     "stylelint": "stylelint **/*.scss",
     "prettier": "prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -37,11 +38,23 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.1",
     "prettier": "2.5.1",
     "stylelint": "^14.2.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
     "typescript": "^4.5.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
