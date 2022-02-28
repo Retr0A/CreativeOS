@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+*/
+
 import { render } from '@testing-library/react';
 // eslint-disable-next-line import/extensions
 import Index from 'pages/index';
